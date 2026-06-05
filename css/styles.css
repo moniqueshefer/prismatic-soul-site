@@ -133,12 +133,15 @@ em { color: var(--stone); }
 
 /* -----  Page hero (for non-home pages) -------------------- */
 .page-hero {
-  padding-block: var(--s-7) var(--s-5);
+  padding-block: var(--s-7) var(--s-3);
   background: var(--cream);
   position: relative;
   overflow: hidden;
 }
 .page-hero__inner { max-width: 48rem; position: relative; z-index: 1; }
+
+/* When a body section follows the page-hero, tighten the gap. */
+.page-hero + .section { padding-block-start: var(--s-4); }
 .page-hero h1 {
   font-size: var(--t-4xl);
   margin-bottom: var(--s-4);
@@ -166,7 +169,12 @@ em { color: var(--stone); }
 /* -----  Prose / long-form body content -------------------- */
 .prose { max-width: 40rem; }
 .prose > * + * { margin-top: 0; }
-.prose h2 { margin-top: var(--s-7); margin-bottom: var(--s-4); }
+.prose h2 {
+  margin-top: var(--s-7);
+  margin-bottom: var(--s-4);
+  font-size: var(--t-3xl);
+  color: var(--stone);
+}
 .prose h3 {
   margin-top: var(--s-6);
   margin-bottom: var(--s-3);
