@@ -655,44 +655,49 @@ em { color: var(--stone); }
   display: inline;
 }
 
-/* -----  Manuscript quote grid (book page) ----------------- */
+/* -----  Manuscript quote list (book page) ----------------- */
 .manuscript-quotes {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--s-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
   margin: var(--s-5) 0 var(--s-7);
   max-width: none;
 }
-@media (min-width: 600px)  { .manuscript-quotes { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1024px) { .manuscript-quotes { grid-template-columns: 1fr 1fr 1fr; } }
-.manuscript-quote {
+.manuscript-quote,
+.prose .manuscript-quote {
   background: var(--cream);
   border: 1px solid var(--line);
+  border-left: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: var(--s-5);
+  padding: var(--s-5) var(--s-7);
   margin: 0;
   max-width: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  font-style: normal;
+  color: var(--ink);
   transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+@media (max-width: 600px) {
+  .manuscript-quote { padding: var(--s-5); }
 }
 .manuscript-quote:hover { border-color: var(--sage); background: var(--white); }
 .manuscript-quote__text {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-size: var(--t-lg);
-  line-height: 1.42;
+  line-height: 1.35;
   color: var(--ink);
-  margin: 0 0 var(--s-4);
+  margin: 0;
   max-width: none;
 }
 .manuscript-quote__source {
+  font-family: "Lora", Georgia, serif;
+  font-style: normal;
   font-size: var(--t-xs);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--stone);
-  display: block;
+  white-space: nowrap;
+  margin-inline-start: var(--s-3);
 }
 
 /* -----  Feature strip (full-bleed image) ------------------- */
