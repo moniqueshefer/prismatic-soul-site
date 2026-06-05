@@ -633,9 +633,9 @@ em { color: var(--stone); }
 .pull-quote__text {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   font-size: clamp(1.5rem, 2.2vw + 0.85rem, 2.25rem);
-  line-height: 1.32;
+  line-height: 1.36;
   max-width: 42rem;
   margin: 0 auto var(--s-4);
   color: var(--ink);
@@ -648,32 +648,43 @@ em { color: var(--stone); }
   text-transform: uppercase;
   color: var(--stone);
   font-style: normal;
+  white-space: nowrap;
+}
+.pull-quote__text .pull-quote__source {
+  margin-inline-start: var(--s-3);
+  display: inline;
 }
 
 /* -----  Manuscript quote grid (book page) ----------------- */
 .manuscript-quotes {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--s-6);
+  gap: var(--s-4);
   margin: var(--s-5) 0 var(--s-7);
   max-width: none;
 }
-@media (min-width: 720px) {
-  .manuscript-quotes { grid-template-columns: 1fr 1fr; gap: var(--s-6) var(--s-7); }
-}
+@media (min-width: 600px)  { .manuscript-quotes { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .manuscript-quotes { grid-template-columns: 1fr 1fr 1fr; } }
 .manuscript-quote {
-  border-left: 2px solid var(--sage);
-  padding-left: var(--s-4);
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--s-5);
   margin: 0;
   max-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
 }
+.manuscript-quote:hover { border-color: var(--sage); background: var(--white); }
 .manuscript-quote__text {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-size: var(--t-lg);
   line-height: 1.42;
   color: var(--ink);
-  margin: 0 0 var(--s-3);
+  margin: 0 0 var(--s-4);
   max-width: none;
 }
 .manuscript-quote__source {
