@@ -166,6 +166,25 @@ em { color: var(--stone); }
   z-index: 0;
 }
 
+/* -----  Bio portrait (inset, soft) ------------------------ */
+.bio-portrait {
+  float: none;
+  margin: 0 auto var(--s-5);
+  max-width: 280px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--cream-deep);
+}
+.bio-portrait img { width: 100%; height: auto; display: block; }
+@media (min-width: 720px) {
+  .bio-portrait {
+    float: right;
+    margin: 0 0 var(--s-4) var(--s-6);
+    max-width: 260px;
+    shape-outside: margin-box;
+  }
+}
+
 /* -----  Prose / long-form body content -------------------- */
 .prose { max-width: 40rem; }
 .prose > * + * { margin-top: 0; }
