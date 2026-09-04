@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Prismatic Soul</title>
-  <meta name="description" content="Write to Monique Shefer at Prismatic Soul. Reply within one working day. Email, WhatsApp on request.">
+  <meta name="description" content="Write a note about coaching, mentoring, a chateau immersion, or the book. I reply within one working day.">
   <meta property="og:title" content="Contact | Prismatic Soul">
-  <meta property="og:description" content="Write to Monique Shefer at Prismatic Soul. Reply within one working day. Email, WhatsApp on request.">
+  <meta property="og:description" content="Write a note about coaching, mentoring, a chateau immersion, or the book. I reply within one working day.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://prismatic-soul.com/contact.html">
+  <meta property="og:image" content="https://prismatic-soul.com/images/og-image.jpg">
   <link rel="canonical" href="https://prismatic-soul.com/contact.html">
   <link rel="icon" href="favicons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicons/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="favicons/icon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=18">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200..500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20">
 </head>
 <body>
 
@@ -23,13 +26,8 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="index.html" class="logo" aria-label="Prismatic Soul — home">
-        <span class="logo__word">Prismatic</span>
-        <svg class="logo__mark" viewBox="10 6 44 52" aria-hidden="true">
-          <defs><linearGradient id="logo-iri" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E8D5E0"/><stop offset="33%" stop-color="#D9DDEB"/><stop offset="66%" stop-color="#DCE8DA"/><stop offset="100%" stop-color="#EADDC8"/></linearGradient></defs>
-          <path d="M32 6 L54 32 L32 58 L10 32 Z" fill="url(#logo-iri)" stroke="#1A1816" stroke-width="1.4"/>
-          <line x1="32" y1="6" x2="32" y2="58" stroke="#1A1816" stroke-width="0.8" opacity="0.45"/>
-        </svg>
-        <span class="logo__word">Soul</span>
+        <img class="logo__brush" src="images/brush-mark-132.png" alt="" width="204" height="132" decoding="async">
+        <span class="logo__name">Prismatic Soul</span>
       </a>
       <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
         <span class="sr-only">Menu</span><span class="nav-toggle__bars" aria-hidden="true"></span>
@@ -37,9 +35,9 @@
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul>
           <li><a href="book.html">Book</a></li>
-          <li><a href="online-courses.html">Courses</a></li>
-          <li><a href="mentoring.html">Mentoring</a></li>
+          <li><a href="working-together.html">Working together</a></li>
           <li><a href="workshops.html">Workshops</a></li>
+          <li><a href="writing.html">The Blog</a></li>
           <li><a href="bio.html">About</a></li>
           <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
@@ -47,7 +45,7 @@
     </div>
   </header>
 
-  <main id="main">
+<main id="main">
 
     <section class="feature-strip" aria-label="Grape hyacinths in bloom">
       <picture>
@@ -71,7 +69,7 @@
         <div class="prose">
           <h2>Direct</h2>
           <div class="detail-grid" style="grid-template-columns: 1fr; gap: var(--s-3);">
-            <div class="detail-grid__item"><h4>Email</h4><p style="font-size: var(--t-base); font-family: 'Lora', Georgia, serif;"><a href="mailto:monique@prismatic-soul.com">monique@prismatic-soul.com</a></p></div>
+            <div class="detail-grid__item"><h4>Email</h4><p style="font-size: var(--t-base); font-family: 'Lora', Georgia, serif;"><a href="mailto:monique@prismatic-soul.com">monique@prismatic-soul.com</a><br><a href="tel:+33682376074">+33 (0)6 82 37 60 74</a></p></div>
             <div class="detail-grid__item"><h4>WhatsApp</h4><p style="font-size: var(--t-base); font-family: 'Lora', Georgia, serif;">Available on request via the form below.</p></div>
             <div class="detail-grid__item"><h4>Response time</h4><p style="font-size: var(--t-base); font-family: 'Lora', Georgia, serif;">Within one working day, usually sooner.</p></div>
             <div class="detail-grid__item"><h4>Where I'm based</h4><p style="font-size: var(--t-base); font-family: 'Lora', Georgia, serif;">Gers, 32190 · SW France</p></div>
@@ -90,11 +88,10 @@
             <p style="margin-bottom: var(--s-4);">
               <label for="contact-subject" style="display:block; font-size:var(--t-sm); margin-bottom:var(--s-1); color:var(--stone);">What you're writing about</label>
               <select id="contact-subject" name="subject" style="width:100%; padding:var(--s-3) var(--s-4); min-height:48px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--cream); font-family:'Lora',serif; font-size:1rem;">
-                <option>Mentoring</option>
-                <option>Workshops &amp; Immersions</option>
-                <option>The Book / Beta Reader</option>
-                <option>Online Courses</option>
-                <option>Chateau Stays</option>
+                <option>Coaching &amp; mentoring</option>
+                <option>Workshops &amp; immersions</option>
+                <option>The book / beta reader</option>
+                <option>Classes</option>
                 <option>Something else</option>
               </select>
             </p>
@@ -121,7 +118,7 @@
         <div>
           <h4>Prismatic Soul</h4>
           <p style="max-width:none; margin:0 0 var(--s-3); color:var(--cream); opacity:0.85;">Self-awareness, shaped for the way you're wired.</p>
-          <p style="max-width:none; margin:0; color:var(--cream); opacity:0.7; font-size:var(--t-xs);">Gers, 32190 · SW France<br>monique@prismatic-soul.com</p>
+          <p style="max-width:none; margin:0; color:var(--cream); opacity:0.7; font-size:var(--t-xs);">Gers, 32190 &middot; SW France<br>monique@prismatic-soul.com<br>+33 (0)6 82 37 60 74</p>
         </div>
         <div>
           <h4>Site</h4>
@@ -129,26 +126,25 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="bio.html">About</a></li>
             <li><a href="book.html">Book</a></li>
-            <li><a href="online-courses.html">Courses</a></li>
-            <li><a href="mentoring.html">Mentoring</a></li>
+            <li><a href="working-together.html">Working together</a></li>
             <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="writing.html">The Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div>
           <h4>Elsewhere</h4>
           <ul>
-            <li><a href="check-in.html">Check in with your nervous system →</a></li>
-            <li><a href="coaching.html">Coaching</a></li>
-            <li><a href="https://www.lifesdaringadventure.com/blog" rel="noopener">Writing ↗</a></li>
-            <li><a href="chateau-stays.html">The Chateau</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="https://chateau-de-seailles.fr/" rel="noopener">The Chateau &nearr;</a></li>
             <li><a href="privacy.html">Privacy</a></li>
             <li><a href="sitemap.html">Sitemap</a></li>
           </ul>
         </div>
       </div>
       <div class="site-footer__legal">
-        © <span id="year">2026</span> Monique Shefer · All rights reserved.
+        &copy; <span id="year">2026</span> Monique Shefer &middot; All rights reserved.
       </div>
     </div>
   </footer>
@@ -161,7 +157,7 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=18" defer></script>
+  <script src="js/main.js?v=19" defer></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

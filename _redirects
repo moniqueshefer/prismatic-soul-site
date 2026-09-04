@@ -1,0 +1,16 @@
+# prismatic-soul.com — internal redirects after the 2026-09-02 merge
+# Format: /old-path  /new-path  status
+# NOTE: do NOT add rules of the form "/foo  /foo.html" — Cloudflare Pages
+# already serves /foo.html at /foo and redirects the other way, so such a
+# rule creates an infinite loop. (That bug is what broke six pages on the
+# old coaching site.)
+
+/mentoring               /working-together.html            301
+/mentoring.html          /working-together.html            301
+/coaching                /working-together.html            301
+/coaching.html           /working-together.html            301
+/chateau-stays           https://chateau-de-seailles.fr/   301
+/chateau-stays.html      https://chateau-de-seailles.fr/   301
+/blog                    /writing.html                     301
+/courses                 /online-courses.html              301
+/about                   /bio.html                         301

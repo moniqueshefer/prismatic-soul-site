@@ -8,14 +8,14 @@
 /* -----  Design tokens  ------------------------------------- */
 :root {
   /* colour */
-  --cream:           #F8F2E4;     /* page background */
-  --cream-deep:      #F0E6CF;     /* card / panel background */
+  --cream:           #FCFBF9;     /* page background */
+  --cream-deep:      #F5F2EC;     /* card / panel background */
   --sage:            #94A38B;     /* primary accent */
   --sage-deep:       #6F8068;     /* link, focus ring */
-  --stone:           #847B6E;     /* muted text */
-  --ink:             #2A2826;     /* primary text */
-  --line:            #DDD2BA;     /* hairlines */
-  --white:           #FFFDF7;
+  --stone:           #948B7C;     /* muted text */
+  --ink:             #37342F;     /* primary text */
+  --line:            #EFE9DE;     /* hairlines */
+  --white:           #FFFFFF;
 
   /* iridescent gradient — used sparingly */
   --iridescent: linear-gradient(
@@ -323,7 +323,7 @@ em { color: var(--stone); }
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(248, 242, 228, 0.92);
+  background: rgba(252, 251, 249, 0.92);
   backdrop-filter: saturate(140%) blur(8px);
   -webkit-backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid var(--line);
@@ -343,7 +343,7 @@ em { color: var(--stone); }
   text-decoration: none;
   color: #1A1816;
 }
-.logo:hover { color: #1A1816; }
+.logo:hover { color: var(--ink); }
 .logo__mark { width: 18px; height: 22px; flex: 0 0 auto; }
 .logo__word {
   font-family: "Cormorant Garamond", Georgia, serif;
@@ -500,10 +500,10 @@ em { color: var(--stone); }
   inset: 0;
   z-index: -2;
   background: linear-gradient(180deg,
-    rgba(248, 242, 228, 0.06) 0%,
-    rgba(248, 242, 228, 0.16) 45%,
-    rgba(248, 242, 228, 0.60) 88%,
-    rgba(248, 242, 228, 0.90) 100%);
+    rgba(252, 251, 249, 0.06) 0%,
+    rgba(252, 251, 249, 0.16) 45%,
+    rgba(252, 251, 249, 0.60) 88%,
+    rgba(252, 251, 249, 0.90) 100%);
 }
 .hero__inner {
   max-width: 48rem;
@@ -513,7 +513,7 @@ em { color: var(--stone); }
 }
 .hero h1 {
   margin-bottom: var(--s-5);
-  text-shadow: 0 1px 28px rgba(248, 242, 228, 0.65);
+  text-shadow: none;
 }
 .hero__deck {
   font-family: "Cormorant Garamond", Georgia, serif;
@@ -530,7 +530,7 @@ em { color: var(--stone); }
   color: var(--ink);
   max-width: 38rem;
   margin: 0 auto var(--s-7);
-  text-shadow: 0 1px 16px rgba(248, 242, 228, 0.7);
+  text-shadow: none;
 }
 .hero__shimmer {
   position: absolute;
@@ -930,4 +930,605 @@ em { color: var(--stone); }
   body { color: #000; background: #fff; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #555; }
   .section { padding-block: 1rem; }
+}
+
+
+/* ==== merged from Life's Daring Adventure — 2026-09-02 ==================
+   Components ported from the coaching site (blog posts, cards, forms,
+   resource lists). The aliases below map that site's colour names onto
+   the Prismatic Soul palette, so the ported rules need no edits.        */
+:root {
+  --paper:       var(--cream);
+  --mist:        var(--cream-deep);
+  --mist-deep:   var(--cream-deep);
+  --silver:      var(--line);
+  --silver-deep: var(--line);
+  --green:       var(--sage);
+  --green-deep:  var(--sage-deep);
+  --green-ink:   var(--ink);
+  --pink:        var(--cream-deep);
+  --pink-deep:   var(--sage-deep);
+}
+
+.section--mist  { background: var(--mist); }
+
+.section--green-ink { background: var(--green-ink); color: var(--paper); }
+
+.section--green-ink h1, .section--green-ink h2, .section--green-ink h3 { color: var(--white); }
+
+/* -----  Page banner (top image band on interior pages) ----- */
+.page-banner {
+  position: relative;
+  height: clamp(150px, 26vh, 300px);
+  overflow: hidden;
+  background: var(--mist);
+}
+
+.page-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.page-banner__overlay {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgba(43, 54, 47, 0.18) 0%, rgba(43, 54, 47, 0.02) 32%,
+    rgba(250, 251, 250, 0) 60%, rgba(250, 251, 250, 0.85) 100%);
+}
+
+.page-banner + .page-hero { padding-block-start: var(--s-6); }
+
+.logo__text { display: flex; flex-direction: column; line-height: 1; }
+
+.logo__sub {
+  font-family: "Lora", Georgia, serif;
+  font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--stone); margin-top: 3px; white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+  .logo__sub { font-size: 0.52rem; letter-spacing: 0.1em; }
+}
+
+.primary-nav a, .has-sub > .sub-toggle {
+  font-family: "Lora", Georgia, serif; font-size: var(--t-sm);
+  text-decoration: none; color: var(--ink); letter-spacing: 0.02em;
+}
+
+@media (min-width: 1120px) {
+  .primary-nav > ul > li > a,
+  .primary-nav .sub-toggle { white-space: nowrap; }
+}
+
+/* dropdown */
+.has-sub { position: relative; }
+
+.has-sub > .sub-toggle {
+  font-family: "Lora", Georgia, serif; font-size: var(--t-sm);
+  background: none; border: 0; color: var(--ink); cursor: pointer;
+  letter-spacing: 0.02em; padding: 0; display: inline-flex; align-items: center; gap: 0.3rem;
+}
+
+.has-sub > .sub-toggle:hover { color: var(--green-deep); }
+
+.has-sub > .sub-toggle::after { content: "▾"; font-size: 0.7em; color: var(--stone); }
+
+.subnav {
+  list-style: none; margin: 0; padding: var(--s-4);
+  position: absolute; top: 100%; margin-top: 8px; left: 50%; transform: translateX(-50%);
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: 0 12px 34px rgba(43, 54, 47, 0.12);
+  min-width: 230px; flex-direction: column; gap: 0; align-items: stretch;
+  opacity: 0; visibility: hidden; transition: opacity 0.18s var(--ease);
+}
+
+.subnav li + li { margin-top: 0; }
+
+.subnav a { display: block; padding: 0.4rem var(--s-3); border-radius: var(--radius-sm); white-space: nowrap; }
+
+.subnav a:hover { background: var(--mist); }
+
+/* The top nav's flex gap/centering leaks into the dropdown via specificity;
+   override so items sit tight together with comfortable padding to the box edge. */
+.primary-nav .subnav { gap: 0; align-items: stretch; padding: var(--s-4) var(--s-3); }
+
+.primary-nav .subnav a { text-align: left; padding: var(--s-3) var(--s-4); }
+
+@media (min-width: 1120px) {
+  /* Invisible hover-bridge so the cursor can travel from the trigger
+     to the submenu without crossing an empty gap that closes it. */
+  .has-sub::after {
+    content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px;
+  }
+  .has-sub:hover .subnav,
+  .has-sub:focus-within .subnav { opacity: 1; visibility: visible; }
+}
+
+.primary-nav.is-open .subnav {
+  position: static; transform: none; opacity: 1; visibility: visible; display: flex;
+  box-shadow: none; border: 0; border-left: 1px solid var(--silver);
+  border-radius: 0; padding: var(--s-2) 0 var(--s-2) var(--s-4); margin-top: var(--s-3); min-width: 0;
+}
+
+.primary-nav.is-open .has-sub > .sub-toggle { margin-bottom: 0; }
+
+.nav-cta a {
+  border: 1px solid var(--green-ink); border-radius: 999px;
+  padding: var(--s-2) var(--s-4); color: var(--green-ink);
+}
+
+.nav-cta a:hover { background: var(--green-ink); color: var(--white); }
+
+.hero__brand {
+  font-family: "Lora", Georgia, serif;
+  font-size: var(--t-sm); letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--green-ink); margin: 0 auto var(--s-4); max-width: none;
+  text-shadow: 0 1px 14px rgba(250, 251, 250, 0.9);
+}
+
+.hero__cta { display: flex; gap: var(--s-3); justify-content: center; flex-wrap: wrap; }
+
+/* -----  Feature row (text + image) ------------------------- */
+.feature-row {
+  display: grid; grid-template-columns: 1fr; gap: var(--s-6); align-items: center;
+}
+
+@media (min-width: 860px) {
+  .feature-row { grid-template-columns: 1fr 1fr; gap: var(--s-8); }
+  .feature-row--reverse .feature-row__media { order: 2; }
+}
+
+.feature-row__media { border-radius: var(--radius); overflow: hidden; }
+
+.feature-row__media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+
+.feature-row p:last-child { margin-bottom: 0; }
+
+/* -----  What-we-do list ------------------------------------ */
+.do-list { list-style: none; padding: 0; margin: var(--s-5) 0; max-width: 40rem; }
+
+.do-list li {
+  position: relative; padding-left: var(--s-6); margin-bottom: var(--s-3);
+  font-size: var(--t-lg);
+}
+
+.do-list li::before {
+  content: "✦"; position: absolute; left: 0; top: 0;
+  color: var(--green); font-size: 0.95em;
+}
+
+.pull-quote--mist { background: var(--mist); }
+
+/* -----  Testimonials (reviews) ----------------------------- */
+.testimonial-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--s-5); margin-top: var(--s-6);
+}
+
+@media (min-width: 700px) {
+  .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.testimonial {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: var(--s-6); display: flex; flex-direction: column;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.testimonial:hover { border-color: var(--green); transform: translateY(-2px); }
+
+.testimonial h3 {
+  font-size: var(--t-xl); font-style: italic; font-weight: 500;
+  margin-bottom: var(--s-3); color: var(--green-deep);
+}
+
+.testimonial p { margin-bottom: var(--s-3); }
+
+.testimonial__author {
+  margin-top: auto; font-family: "Lora", Georgia, serif; font-size: var(--t-xs);
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone);
+}
+
+/* -----  Quote list (inspiration) --------------------------- */
+.quote-list { display: flex; flex-direction: column; gap: var(--s-3); margin: var(--s-6) 0; max-width: none; }
+
+.quote-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: var(--s-5) var(--s-6); max-width: none;
+  transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.quote-card:hover { border-color: var(--pink); background: var(--white); }
+
+.quote-card p {
+  font-family: "Cormorant Garamond", Georgia, serif; font-style: italic;
+  font-size: var(--t-lg); line-height: 1.4; color: var(--ink); margin: 0; max-width: none;
+}
+
+.quote-card cite {
+  display: block; margin-top: var(--s-2);
+  font-family: "Lora", Georgia, serif; font-style: normal; font-size: var(--t-xs);
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--pink-deep);
+}
+
+/* -----  Resource cards (with image) ------------------------ */
+.resource-grid { display: grid; grid-template-columns: 1fr; gap: var(--s-5); margin-top: var(--s-6); }
+
+@media (min-width: 640px) {
+  .resource-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+  .resource-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.resource-card {
+  display: flex; flex-direction: column; background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  text-decoration: none; color: var(--ink);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.resource-card:hover { border-color: var(--green); transform: translateY(-3px); }
+
+.resource-card__media { aspect-ratio: 16/10; overflow: hidden; background: var(--mist); }
+
+.resource-card__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.resource-card__body { padding: var(--s-5); display: flex; flex-direction: column; gap: var(--s-2); }
+
+.resource-card__body h3 { font-size: var(--t-lg); font-weight: 600; font-style: normal; margin: 0; }
+
+.resource-card__body p { font-size: var(--t-sm); color: var(--stone); margin: 0; }
+
+.resource-card__tag {
+  align-self: flex-start; font-size: var(--t-xs); letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--green-deep); background: var(--mist); border-radius: 999px; padding: 2px 10px;
+}
+
+/* double-wide boxed image above the Stress / Neurodiversity pair */
+.resource-band {
+  margin-top: var(--s-6); border-radius: var(--radius);
+  overflow: hidden; border: 1px solid var(--line);
+}
+
+.resource-band picture { display: block; }
+
+.resource-band img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 5; object-fit: cover; }
+
+/* pair of link cards beneath the shared resource band */
+.pair-grid { display: grid; grid-template-columns: 1fr; gap: var(--s-4); margin-top: var(--s-5); }
+
+@media (min-width: 640px) {
+  .pair-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* -----  Resource link categories --------------------------- */
+.link-cats {
+  display: grid; grid-template-columns: 1fr; gap: var(--s-5); margin-top: var(--s-6);
+}
+
+@media (min-width: 640px) {
+  .link-cats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+  .link-cats { grid-template-columns: repeat(3, 1fr); }
+}
+
+.link-cat {
+  background: var(--mist); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: var(--s-5); break-inside: avoid;
+}
+
+.link-cat h3 {
+  font-family: "Cormorant Garamond", Georgia, serif; font-style: normal; font-weight: 600;
+  font-size: var(--t-lg); letter-spacing: 0.02em; margin: 0 0 var(--s-3); color: var(--green-ink);
+  padding-bottom: var(--s-2); border-bottom: 1px solid var(--silver);
+}
+
+.link-cat ul { list-style: none; padding: 0; margin: 0; max-width: none; }
+
+.link-cat li { margin: 0; }
+
+.link-cat li + li { margin-top: var(--s-2); }
+
+.link-cat a { text-decoration: none; border-bottom: 1px solid var(--silver); }
+
+.link-cat a:hover { border-bottom-color: var(--green-deep); color: var(--ink); }
+
+.link-cat .text-only { color: var(--stone); }
+
+/* -----  Blog cards ----------------------------------------- */
+.post-grid { display: grid; grid-template-columns: 1fr; gap: var(--s-6); margin-top: var(--s-6); }
+
+@media (min-width: 720px) {
+  .post-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1040px) {
+  .post-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.post-card {
+  display: flex; flex-direction: column; background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.post-card:hover { border-color: var(--green); transform: translateY(-3px); }
+
+.post-card__media { aspect-ratio: 4/3; overflow: hidden; background: var(--mist); }
+
+.post-card__media a { display: block; width: 100%; height: 100%; }
+
+.post-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s var(--ease); }
+
+.post-card:hover .post-card__media img { transform: scale(1.03); }
+
+.post-card__body { padding: var(--s-5); display: flex; flex-direction: column; gap: var(--s-2); flex: 1; }
+
+.post-card__meta { font-size: var(--t-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); }
+
+.post-card__body h3 { font-size: var(--t-xl); font-style: italic; font-weight: 500; margin: 0; }
+
+.post-card__body h3 a { text-decoration: none; color: var(--ink); }
+
+.post-card__body h3 a:hover { color: var(--green-deep); }
+
+.post-card__excerpt { font-size: var(--t-sm); color: var(--stone); margin: 0; }
+
+.post-card__arrow { margin-top: auto; font-size: var(--t-sm); color: var(--green-deep); }
+
+/* contact two-column */
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: var(--s-7); }
+
+@media (min-width: 860px) {
+  .contact-grid { grid-template-columns: 1.2fr 1fr; gap: var(--s-8); }
+}
+
+.contact-details p { margin-bottom: var(--s-3); }
+
+.contact-details a { word-break: break-word; }
+
+.form { display: grid; gap: var(--s-4); margin-top: var(--s-5); max-width: none; }
+
+.form__row { display: grid; grid-template-columns: 1fr; gap: var(--s-4); }
+
+@media (min-width: 560px) {
+  .form__row { grid-template-columns: 1fr 1fr; }
+}
+
+.form label { display: block; font-size: var(--t-sm); color: var(--stone); margin-bottom: var(--s-2); }
+
+.form input, .form textarea {
+  font-family: "Lora", Georgia, serif; font-size: 1rem;
+  padding: var(--s-3) var(--s-4); min-height: 48px;
+  border: 1px solid var(--silver); border-radius: var(--radius-sm);
+  background: var(--white); width: 100%; color: var(--ink);
+}
+
+.form textarea { min-height: 140px; resize: vertical; }
+
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.form__status { font-size: var(--t-sm); color: var(--green-deep); min-height: 1.2em; }
+
+/* portrait used on about page */
+.about-portrait { border-radius: var(--radius); overflow: hidden; box-shadow: 0 14px 40px rgba(43,54,47,0.14); }
+
+.about-portrait img { width: 100%; height: auto; display: block; }
+
+/* -----  Blog post (single article) ------------------------- */
+.post-article { padding-block: var(--s-7) var(--s-8); }
+
+.post-header { max-width: 42rem; margin: 0 auto var(--s-6); text-align: center; }
+
+.post-header .eyebrow { margin-bottom: var(--s-3); }
+
+.post-header h1 { font-size: var(--t-4xl); margin: 0 0 var(--s-4); }
+
+.post-header__deck {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic; font-weight: 500; font-size: var(--t-xl);
+  color: var(--stone); margin: 0 auto var(--s-4); max-width: 36rem;
+}
+
+.post-meta {
+  font-family: "Lora", Georgia, serif; font-size: var(--t-sm);
+  color: var(--stone); letter-spacing: 0.02em; margin: 0;
+}
+
+.post-figure { margin: 0 auto var(--s-7); max-width: 34rem; }
+
+.post-figure img {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--radius); box-shadow: 0 14px 40px rgba(43, 54, 47, 0.12);
+}
+
+.post-figure figcaption {
+  font-size: var(--t-sm); color: var(--stone); font-style: italic;
+  text-align: center; margin-top: var(--s-3); max-width: 32rem; margin-inline: auto;
+}
+
+.prose .post-callout {
+  background: var(--mist); border-radius: var(--radius);
+  padding: var(--s-5); margin: var(--s-6) 0; font-size: var(--t-sm);
+}
+
+.prose .post-callout p:last-child { margin-bottom: 0; }
+
+.post-refs {
+  margin: var(--s-8) auto 0; max-width: 42rem;
+  padding-top: var(--s-5); border-top: 1px solid var(--line);
+}
+
+.post-refs h2 { font-size: var(--t-xl); margin-bottom: var(--s-4); }
+
+.post-refs p, .post-refs li { font-size: var(--t-sm); color: var(--stone); margin-bottom: var(--s-3); }
+
+.post-tags { display: flex; flex-wrap: wrap; gap: var(--s-2); justify-content: center; margin-top: var(--s-6); }
+
+.post-tags__tag {
+  font-family: "Lora", Georgia, serif;
+  font-size: var(--t-xs); letter-spacing: 0.04em; text-transform: uppercase;
+  background: var(--mist); color: var(--stone);
+  padding: var(--s-1) var(--s-3); border-radius: 999px;
+}
+
+.post-foot { max-width: 42rem; margin: var(--s-7) auto 0; text-align: center; }
+
+.post-back { display: inline-block; margin-top: var(--s-5); }
+
+.read-next { background: var(--paper); }
+
+.read-next h2 { text-align: center; font-size: var(--t-2xl); margin-bottom: var(--s-6); }
+
+.mt-5 { margin-top: var(--s-5); }
+
+.mx-auto { margin-inline: auto; }
+
+.measure-center { max-width: var(--container-narrow); margin-inline: auto; }
+
+
+/* ============================================================
+   2026-09-04 — identity pass
+   Brush mark + live-text wordmark, softer greys, outline CTAs,
+   shell hero. Appended so it wins the cascade.
+   ============================================================ */
+
+:root {
+  --logo-h: 44px;          /* brush mark height in the header */
+  --logo-gap: 0.20;        /* gap as a ratio of the mark height */
+  --logo-name: 0.68;       /* wordmark size as a ratio of the mark height */
+  --ink-h2: #4A4640;       /* section headings, a step lighter */
+  --ink-h3: #55504A;       /* card titles, a step lighter again */
+  --ink-quote: #46423B;
+}
+
+/* -----  Header lockup  ------------------------------------- */
+.logo { gap: calc(var(--logo-h) * var(--logo-gap)); align-items: center; }
+.logo__brush { height: var(--logo-h); width: auto; flex: 0 0 auto; display: block; }
+.logo__name {
+  font-family: "Jost", system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: calc(var(--logo-h) * var(--logo-name));
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+}
+@media (max-width: 640px) { :root { --logo-h: 34px; } .logo__name { letter-spacing: 0.22em; } }
+
+/* -----  Heading colour ladder  ----------------------------- */
+h2 { color: var(--ink-h2); }
+h3 { color: var(--ink-h3); }
+.pull-quote__text { color: var(--ink-quote); }
+
+/* -----  Outline buttons  ----------------------------------- */
+.btn, .btn--primary, .btn--ghost {
+  background: none;
+  color: #3A362F;
+  border: 1px solid rgba(58, 54, 47, 0.28);
+  border-radius: 0;
+  font-family: "Jost", system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  min-height: 0;
+  padding: 14px 28px;
+}
+.btn--primary { border-color: rgba(58, 54, 47, 0.5); }
+.btn:hover, .btn--primary:hover, .btn--ghost:hover {
+  background: none;
+  color: var(--ink);
+  border-color: rgba(58, 54, 47, 0.75);
+}
+
+/* -----  Shell hero  ---------------------------------------- */
+.hero--shell {
+  min-height: 0;
+  padding-block: var(--s-6) var(--s-8);
+  display: block;
+  overflow: visible;
+}
+.hero--shell .hero__shell { display: block; margin: 0 auto var(--s-5); width: 62%; min-width: 240px; }
+.hero--shell .hero__shell img { width: 100%; height: auto; }
+.hero--shell .hero__inner { max-width: 44rem; margin-inline: auto; text-align: center; }
+.hero--shell h1 { margin: var(--s-3) 0 var(--s-4); text-shadow: none; }
+.hero--shell .hero__deck {
+  font-family: "Lora", Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--t-lg);
+  color: var(--stone);
+  color: #5A544B;
+  text-shadow: none;
+  margin: 0 auto var(--s-6);
+  max-width: 34rem;
+}
+.hero--shell .hero__cta { display: flex; gap: var(--s-4); justify-content: center; flex-wrap: wrap; margin: 0; }
+@media (max-width: 700px) { .hero--shell .hero__shell { width: 92%; } }
+
+
+/* -----  Headings upright  ---------------------------------- */
+/* The original build set every h2 (and the offer/post card h3s) in italic.
+   Italic at display size reads hurried; these put them back upright.       */
+h2, h3, .offer-card h3, .post-card__body h3, .track-card h3, .resource-card h3 { font-style: normal; }
+
+
+/* -----  Jost as the furniture face  ------------------------ */
+/* Cormorant sets headlines, Lora sets reading, Jost sets the
+   structural type: wordmark, navigation, buttons, eyebrows, labels. */
+.primary-nav a, .subnav a, .eyebrow, .pull-quote__source, .lbl,
+.offer-card__arrow, .site-footer h4, .signup__note {
+  font-family: "Jost", system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+}
+.eyebrow { letter-spacing: 0.2em; }
+.primary-nav a { letter-spacing: 0.01em; }
+
+
+/* -----  Jost as the reading face  -------------------------- */
+/* Two families: Cormorant Garamond sets the headlines, Jost does
+   everything else — body copy, navigation, buttons, labels.      */
+body, p, li, dd, dt, blockquote, figcaption, input, textarea, select,
+.hero--shell .hero__deck, .testimonial__author {
+  font-family: "Jost", system-ui, -apple-system, sans-serif;
+}
+body { line-height: 1.72; }              /* geometric sans needs more leading */
+p { letter-spacing: 0.005em; }           /* and a touch more letter-fit */
+
+/* Offer-card titles, very slightly larger */
+.offer-card h3 { font-size: 1.45rem; }
+
+
+/* -----  Prismatic wordmark  -------------------------------- */
+/* Dark, desaturated spectrum across the name: teal-green, sapphire,
+   garnet, ochre. Falls back to solid ink where background-clip is
+   unsupported, and where the user asks for reduced transparency.   */
+.logo__name {
+  color: var(--ink);                       /* fallback */
+  background-image: linear-gradient(95deg,
+      #2F2C28 0%,      /* the mark's ink — the P starts here */
+      #2F3F3A 7%,      /* ink taking on green                */
+      #3B5B52 18%,     /* teal green                         */
+      #33507A 44%,     /* sapphire                           */
+      #6B303E 73%,     /* garnet                             */
+      #7C5C2C 100%);   /* ochre                              */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .logo__name { color: var(--ink); -webkit-text-fill-color: currentColor; }
+}
+
+/* -----  Section heading set in the wordmark voice  ---------- */
+.h2--mark {
+  font-family: "Jost", system-ui, -apple-system, sans-serif !important;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: clamp(1.25rem, 2.1vw + 0.6rem, 2rem);
+  line-height: 1.25;
 }

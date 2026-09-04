@@ -1,15 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="iri" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#E8D5E0"/>
-      <stop offset="33%" stop-color="#D9DDEB"/>
-      <stop offset="66%" stop-color="#DCE8DA"/>
-      <stop offset="100%" stop-color="#EADDC8"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="12" fill="#2A2826"/>
-  <!-- prism / open door mark -->
-  <path d="M32 12 L48 32 L32 52 L16 32 Z" fill="url(#iri)" opacity="0.95"/>
-  <path d="M32 12 L48 32 L32 52" fill="none" stroke="#F8F2E4" stroke-width="1.2" opacity="0.55"/>
-  <line x1="32" y1="12" x2="32" y2="52" stroke="#F8F2E4" stroke-width="0.8" opacity="0.35"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Prismatic Soul">
+  <style>
+    .bg { fill:#FCFBF9 } .ink { stroke:#2F2C28 }
+    @media (prefers-color-scheme: dark) { .bg { fill:#1D1B19 } .ink { stroke:#F2EDE4 } }
+  </style>
+  <rect class="bg" width="100" height="100"/>
+  <clipPath id="c"><rect x="11" y="11" width="78" height="78"/></clipPath>
+  <rect class="ink" x="11" y="11" width="78" height="78" fill="none" stroke-width="5.67"/>
+  <g clip-path="url(#c)"><path class="ink" d="M-37.22,89.00 A78.00,78.00 0 0 1 40.78,11.00 A48.22,48.22 0 0 1 89.00,59.22 A29.78,29.78 0 0 1 59.22,89.00 A18.44,18.44 0 0 1 40.78,70.56" fill="none" stroke-width="5.67" stroke-linecap="round"/></g>
 </svg>
