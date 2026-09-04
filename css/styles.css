@@ -1465,7 +1465,12 @@ h3 { color: var(--ink-h3); }
   margin: 0 auto var(--s-6);
   max-width: 34rem;
 }
-.hero--shell .hero__cta { display: flex; gap: var(--s-4); justify-content: center; flex-wrap: wrap; margin: 0; }
+.hero--shell .hero__cta {
+  display: flex; gap: var(--s-4); justify-content: center; flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: none;   /* paragraphs are capped at --measure (64ch); this row must not be */
+  width: 100%;
+}
 @media (max-width: 700px) { .hero--shell .hero__shell { width: 92%; } }
 
 
