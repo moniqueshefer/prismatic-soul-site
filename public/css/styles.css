@@ -1549,7 +1549,8 @@ p { letter-spacing: 0.005em; }           /* and a touch more letter-fit */
 .btn--soon:hover { color: var(--stone); border-color: rgba(148, 139, 124, 0.35); background: none; }
 
 /* A strip with no caption over it keeps the photograph's own light */
-.feature-strip--clear .feature-strip__overlay {
+.feature-strip--clear .feature-strip__overlay,
+.feature-strip--lit .feature-strip__overlay {
   background: linear-gradient(to bottom, rgba(42, 40, 38, 0.10) 0%, rgba(42, 40, 38, 0.02) 26%, transparent 52%);
 }
 
@@ -1716,3 +1717,10 @@ p { letter-spacing: 0.005em; }           /* and a touch more letter-fit */
 .bio-teaser__photo img { object-position: center 40%; }
 .bio-teaser__photo:has(img) { background: none; }
 .bio-teaser__photo:has(img)::after { content: none; }
+
+
+/* Full brightness: no wash over the photograph at all, bar a whisper at the
+   very top so the header does not meet it on a hard line. */
+.feature-strip--bare .feature-strip__overlay {
+  background: linear-gradient(to bottom, rgba(42, 40, 38, 0.06) 0%, transparent 18%);
+}
