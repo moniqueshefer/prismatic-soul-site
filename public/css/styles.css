@@ -1724,3 +1724,25 @@ p { letter-spacing: 0.005em; }           /* and a touch more letter-fit */
 .feature-strip--bare .feature-strip__overlay {
   background: linear-gradient(to bottom, rgba(42, 40, 38, 0.06) 0%, transparent 18%);
 }
+
+/* Retreat date choice inside the signup block */
+.signup-embed__choice { border: 0; padding: 0; margin: var(--s-4) 0 0; }
+.signup-embed__choice legend {
+  padding: 0;
+  margin-block-end: var(--s-3);
+  font-family: "Jost", system-ui, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--stone);
+}
+.signup-embed__choice label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  margin-block-end: var(--s-2);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.signup-embed__choice input { accent-color: var(--ink); margin: 0; }
