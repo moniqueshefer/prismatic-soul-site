@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200..500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=31">
+  <link rel="stylesheet" href="css/styles.css?v=32">
   <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -203,7 +203,12 @@
       <div class="container container--narrow">
         <span class="eyebrow">About Monique</span>
         <div class="bio-teaser">
-          <div class="bio-teaser__photo" role="img" aria-label="Photograph of Monique Shefer"></div>
+          <div class="bio-teaser__photo">
+            <picture>
+              <source type="image/webp" srcset="images/monique-portrait-400.webp 400w, images/monique-portrait-800.webp 800w" sizes="220px">
+              <img src="images/monique-portrait-640.jpg" alt="Monique Shefer, smiling, in a teal scarf with autumn fields behind" width="640" height="777" loading="lazy" decoding="async">
+            </picture>
+          </div>
           <div>
             <p>I'm Monique Shefer. I teach self-awareness and nervous-system regulation from a chateau in SW France — drawing on a lifetime of practice across yoga, meditation, chi gung, chi nei tsang, and the contemplative traditions of Vedanta and Tao. I homeschool a neurodiverse child, write blog posts and books, and believe that personal sovereignty — not dogma — is what builds a kinder world.</p>
             <p><a class="btn btn--ghost" href="bio.html">More about Monique →</a></p>
