@@ -1,0 +1,20 @@
+{
+  // Prismatic Soul — static site served by Cloudflare Workers static assets.
+  //
+  // The site lives in public/ rather than the repository root. Wrangler uploads
+  // everything inside `assets.directory`, and it rejects any file over 25 MiB —
+  // including Git's own packfile, which it should ignore but does not
+  // (cloudflare/workerd#4336). With the assets directory pointed at the repo
+  // root, .git/objects/pack/*.pack grew past 25 MiB once the practice audio was
+  // added, and every build failed. Keeping the site in public/ puts .git outside
+  // what is uploaded, so history can grow freely.
+  //
+  // Deleting large files later does NOT undo this: the blobs stay in history and
+  // the packfile stays large. Individual assets must still be under 25 MiB.
+  "name": "prismatic-soul-site",
+  "compatibility_date": "2026-09-06",
+  "assets": {
+    "directory": "./public/",
+    "not_found_handling": "404-page"
+  }
+}
