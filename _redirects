@@ -14,3 +14,16 @@
 /blog                    /writing.html                     301
 /courses                 /online-courses.html              301
 /about                   /bio.html                         301
+
+# 2026-09-06 — resources wing withdrawn (to be rebuilt as its own funnel).
+# Files archived outside the repo at ../_archive-resources/
+/resources               /                                 301
+/resources.html          /                                 301
+/homeschooling-resources        /                          301
+/homeschooling-resources.html   /                          301
+/language-learning-resources        /                      301
+/language-learning-resources.html   /                      301
+/working-with-neurodiversity        /                      301
+/working-with-neurodiversity.html   /                      301
+/stress-management       /                                 301
+/stress-management.html  /                                 301

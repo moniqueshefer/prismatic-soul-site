@@ -1409,13 +1409,13 @@ em { color: var(--stone); }
   font-family: "Jost", system-ui, -apple-system, sans-serif;
   font-weight: 300;
   font-size: calc(var(--logo-h) * var(--logo-name));
-  letter-spacing: 0.30em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   line-height: 1;
   color: var(--ink);
   white-space: nowrap;
 }
-@media (max-width: 640px) { :root { --logo-h: 34px; } .logo__name { letter-spacing: 0.22em; } }
+@media (max-width: 640px) { :root { --logo-h: 34px; } .logo__name { letter-spacing: 0.18em; } }
 
 /* -----  Heading colour ladder  ----------------------------- */
 h2 { color: var(--ink-h2); }
@@ -1537,3 +1537,173 @@ p { letter-spacing: 0.005em; }           /* and a touch more letter-fit */
   font-size: clamp(1.25rem, 2.1vw + 0.6rem, 2rem);
   line-height: 1.25;
 }
+
+/* Coming-soon marker in place of the check-in form */
+.signup__soon { margin-top: var(--s-5); }
+.btn--soon {
+  display: inline-block;
+  cursor: default;
+  color: var(--stone);
+  border-color: rgba(148, 139, 124, 0.35);
+}
+.btn--soon:hover { color: var(--stone); border-color: rgba(148, 139, 124, 0.35); background: none; }
+
+/* A strip with no caption over it keeps the photograph's own light */
+.feature-strip--clear .feature-strip__overlay {
+  background: linear-gradient(to bottom, rgba(42, 40, 38, 0.10) 0%, rgba(42, 40, 38, 0.02) 26%, transparent 52%);
+}
+
+/* The strip's <picture> wrapper is inline by default, so the img's height:100%
+   had nothing to resolve against and object-fit never engaged. */
+.feature-strip picture,
+.page-banner picture { display: block; height: 100%; }
+/* Portrait sources: hold the framing near the top of the frame */
+.feature-strip--canopy img { object-position: center 12%; }
+.feature-strip--clear img { object-position: center 70%; }
+/* 4:3 vista: hold the horizon, not the empty sky */
+.feature-strip--vista img { object-position: center 62%; }
+
+/* ---------- Practices ---------- */
+.practice {
+  max-width: 44rem;
+  margin: 0 auto var(--s-6);
+  padding: var(--s-5);
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+}
+.practice__meta {
+  font-family: "Jost", system-ui, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--stone);
+  margin: 0;
+  max-width: none;
+}
+.practice__player { width: 100%; display: block; margin: var(--s-4) 0; }
+.practice__note {
+  margin: 0 0 var(--s-2);
+  max-width: none;
+  font-size: 0.92rem;
+  color: var(--ink-h3, #55504A);
+}
+.practice__note strong {
+  font-family: "Jost", system-ui, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--stone);
+}
+.transcript { max-width: 44rem; margin-inline: auto; }
+.transcript h2 {
+  font-family: "Jost", system-ui, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  color: var(--stone);
+  padding-block-end: var(--s-2);
+  border-block-end: 1px solid var(--line);
+  margin-block-end: var(--s-4);
+}
+.practice-list { list-style: none; padding: 0; margin: var(--s-6) auto 0; max-width: 44rem; }
+.practice-card {
+  padding-block: var(--s-5);
+  border-block-start: 1px solid var(--line);
+}
+.practice-card:last-child { border-block-end: 1px solid var(--line); }
+.practice-card h2 { margin: var(--s-2) 0 var(--s-3); font-size: 1.6rem; }
+.practice-card h2 a { text-decoration: none; }
+.practice-card p { max-width: none; margin: 0; }
+.practice-card__more { margin-block-start: var(--s-3) !important; }
+.practice-next { max-width: 44rem; margin: var(--s-6) auto 0; padding-block-start: var(--s-5); border-block-start: 1px solid var(--line); }
+
+/* ---------- Kit signup form ---------- */
+.signup-embed {
+  max-width: 34rem;
+  margin: var(--s-5) 0 var(--s-6);
+  padding: var(--s-5);
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+}
+.signup-embed__form { margin: 0; }
+.signup-embed__fields { display: flex; flex-direction: column; gap: var(--s-3); }
+@media (min-width: 34rem) {
+  .signup-embed__fields { flex-direction: row; align-items: stretch; }
+  .signup-embed__input { flex: 1 1 auto; min-width: 0; }
+  .signup-embed__submit { flex: 0 0 auto; }
+}
+.signup-embed__input {
+  font-family: "Jost", system-ui, sans-serif;
+  font-size: 0.95rem;
+  padding: 13px 14px;
+  background: var(--white, #FFFFFF);
+  border: 1px solid rgba(58, 54, 47, 0.28);
+  border-radius: 0;
+  color: var(--ink);
+}
+.signup-embed__input::placeholder { color: var(--stone); }
+.signup-embed__input:focus { outline: 2px solid rgba(58, 54, 47, 0.45); outline-offset: -2px; }
+.signup-embed__submit { cursor: pointer; white-space: nowrap; }
+.signup-embed__note {
+  margin: var(--s-3) 0 0;
+  max-width: none;
+  font-size: 0.8rem;
+  color: var(--stone);
+}
+.signup-embed__alert { list-style: none; padding: 0; margin: 0 0 var(--s-3); color: #8A3324; font-size: 0.9rem; }
+.signup-embed__alert:empty { display: none; margin: 0; }
+.signup-embed__by { margin-block-start: var(--s-3); }
+.signup-embed__by a {
+  font-family: "Jost", system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  text-decoration: none;
+  opacity: 0.7;
+}
+.signup-embed .formkit-alert-success,
+.signup-embed .formkit-alert:not(.formkit-alert-error) {
+  list-style: none; padding: 0; margin: 0; color: var(--ink); font-size: 0.95rem;
+}
+
+/* ---------- Closed / full markers ---------- */
+.tag {
+  display: inline-block;
+  vertical-align: middle;
+  margin-inline-start: 0.6em;
+  padding: 0.28em 0.7em;
+  font-family: "Jost", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  border: 1px solid rgba(148, 139, 124, 0.45);
+  white-space: nowrap;
+}
+.note-closed {
+  padding-inline-start: var(--s-4);
+  border-inline-start: 2px solid var(--line);
+  color: var(--ink-h3, #55504A);
+}
+
+/* ---------- Numbered steps ---------- */
+/* Numbers sit inline so every line of body copy shares one left edge. */
+.steps { list-style: none; counter-reset: step; padding: 0; margin: var(--s-4) 0 var(--s-5); }
+.steps li { counter-increment: step; margin-block-end: var(--s-4); }
+.steps li strong::before {
+  content: counter(step) ". ";
+  font-family: "Jost", system-ui, sans-serif;
+  font-weight: 300;
+  color: var(--stone);
+}
+.steps li strong { font-weight: 600; }
+
+
+/* A body container that shares the page-hero's column, so hero text and body
+   text sit on the same left edge instead of staggering. */
+.container--text { max-width: 48rem; }
