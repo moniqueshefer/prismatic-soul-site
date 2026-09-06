@@ -1746,3 +1746,6 @@ p { letter-spacing: 0.005em; }           /* and a touch more letter-fit */
   cursor: pointer;
 }
 .signup-embed__choice input { accent-color: var(--ink); margin: 0; }
+
+/* Lead line above an inline signup form */
+.signup-embed__lead { margin: 0 0 var(--s-4); max-width: none; }
